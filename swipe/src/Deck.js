@@ -2,8 +2,18 @@ import React, { Component } from 'react';
 import { Animated, View } from 'react-native';
 
 class Deck extends Component {
+	renderCards() {
+		return this.props.data.map(item => {
+			return this.props.renderCard(item);
+		});
+	}
+
 	render() {
-		return <View />;
+		return (
+			<View>
+				{this.renderCards()}
+			</View>
+		);
 	}
 }
 
